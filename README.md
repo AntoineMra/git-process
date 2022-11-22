@@ -49,11 +49,32 @@ Les branches se supprimeront automatiquement après les PR fusionnées dans `mai
 
 ## Créer une nouvelle branche pour implémenter une fonctionnalité
 
-To Be Written
+```bash
+# Je me recentre sur la branche principale et je me remet à jour
+git checkout main
+git pull
+
+# Je crée une nouvelle branche en partant de main (prefix/US-N°)
+git checkout -b feat/US-24
+
+```
 
 ## Publier une branche sur le repository distant
 
-To Be Written
+```bash
+
+# Je crée mon dernier commit
+git add . && git commit -m "feat(US-24): last commit of the US-24"
+
+# Je fusionne mon travail avec la branche principale
+git rebase main 
+# Si Conflits : Je corrige en précisant dans l'éditeur quel version du code conflictuel est le plus pertinent (Pas hésiter à demander de l'aide)
+# Que mon code fonctionne de manière identique après la fusion
+
+# Je pousse ma branche sur le dépot distant
+git push origin -f feat/US-24
+
+```
 
 ## Proposer une Pull Request
 
